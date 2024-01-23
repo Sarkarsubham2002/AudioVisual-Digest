@@ -1,0 +1,9 @@
+<!-- authentication/templates/authentication/signin.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">{% csrf_token %}
+    {{ form.as_p}}
+    <a href='/homepage/home/' class="btn btn-primary">SUBMIT</a>
+
+{% endblock %}

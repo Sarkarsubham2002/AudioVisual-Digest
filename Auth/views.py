@@ -10,8 +10,7 @@ from django.views.generic import TemplateView
 class SignUpView(CreateView):
     form_class = UserCreationForm
     template_name = 'signup.html'
-    success_url='authorised/'
-
+    success_url='signin'
 
 
 
@@ -20,15 +19,8 @@ class SignInView(LoginView):
 
 
 class SignOutView(LogoutView):
-    next_page = reverse_lazy('signout')
+    next_page = reverse_lazy('index')
 
 
-
-class AuthorizedView(LoginRequiredMixin, TemplateView):
-    template_name = 'authorised.html'
-    login_url = '/signin'
-
-
-def Homepage(request):
-
+def entry(request):
     return render(request, "index.html")

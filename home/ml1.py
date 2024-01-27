@@ -143,4 +143,4 @@ def transcribe_and_summarize(input_audio_path, output_txt_path, output_sum_audio
 
 
 # # Call the function with appropriate paths
-# transcribe_and_summarize("../musicdata/hello4.mp3", "../output_txt/out.txt", "../sumaudio/audio.mp3", "../output_txt/out_sum.txt")
+#transcribe_and_summarize("../musicdata/test.mp3", "../output_txt/out.txt", "../sumaudio/audio.mp3", "../output_txt/out_sum.txt")

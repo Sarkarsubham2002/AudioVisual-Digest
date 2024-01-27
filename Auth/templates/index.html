@@ -7,17 +7,10 @@
         <h3>Hello</h3>
 
        <a href="{% url 'Auth.signin' %}" class="btn btn-primary">SignIn</a>
-        
-        {% if user.is_authenticated %}
-        <a href="{% url 'home.base' %}" class="btn btn-primary">Home</a>
-        <a href="{% url 'Auth.signout' %}" class="btn btn-primary">Signout</a>
-        {% else %}
-        
-        <a href="{% url 'Auth.signup' %}" class="btn btn-primary">SignUp</a>
+       <a href="{% url 'Auth.signup' %}" class="btn btn-primary">SignUp</a>
         
 
 
 
         <script scr="" async defer></script>
-        {% endif %}
 {% endblock %}

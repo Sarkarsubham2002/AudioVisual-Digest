@@ -5,7 +5,7 @@ import librosa
 from functools import lru_cache
 import time
 import moviepy.editor
-# from tkinter.filedialog import *
+
 from gtts import gTTS
 import whisper
 from transformers import pipeline
@@ -16,7 +16,7 @@ import re
 # nltk.download('punkt')
 from nltk import sent_tokenize
 from nltk import word_tokenize
-
+from .models import details
 
 
 
@@ -112,7 +112,6 @@ def berty_generating_paragraph(chunks):
 
 
 
-
 ###########################################################################
 def transcribe_and_summarize(input_audio_path, output_txt_path, output_sum_audio_path, output_sum_txt_path):
     # Transcribe audio to text
@@ -134,6 +133,8 @@ def transcribe_and_summarize(input_audio_path, output_txt_path, output_sum_audio
     tts = gTTS(summarized_text, lang='en')
     tts.save(output_sum_audio_path)
 
+
+    details.objects.create(summary=summarized_text)
     # Write summarized text to a text file
     with open(output_sum_txt_path, "w") as file:
         file.write(summarized_text)

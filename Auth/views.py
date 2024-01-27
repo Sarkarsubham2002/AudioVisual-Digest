@@ -7,10 +7,14 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 
+
+
+
+
 class SignUpView(CreateView):
     form_class = UserCreationForm
     template_name = 'signup.html'
-    success_url='authorised/'
+    success_url=reverse_lazy('home.base')
 
 
 
@@ -30,5 +34,4 @@ class AuthorizedView(LoginRequiredMixin, TemplateView):
 
 
 def Homepage(request):
-
     return render(request, "index.html")

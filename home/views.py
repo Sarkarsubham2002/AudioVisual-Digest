@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 # in yourapp/views.py
 from .forms import MediaFileForm
-
+from .models import MediaFile, details
 from django.views import View
 from django.shortcuts import render, redirect
 
@@ -42,6 +42,7 @@ class HomeView(View):
                 for chunk in uploaded_file.chunks():
                     destination.write(chunk)
         # Call the function with appropriate paths
+        
         from .ml1 import transcribe_and_summarize
         transcribe_and_summarize(file_path, "./output_txt/out.txt", "./sumaudio/audio.mp3", "./output_txt/out_sum.txt")
 
@@ -61,18 +62,6 @@ class HomeView(View):
 
     
     
-    def read_file(request):
-        file_path = 'mysite/home/out.txt'  # Replace with the actual path to your text file
-
-        try:
-            with open(file_path, 'r') as file:
-                content = file.read()
-        except FileNotFoundError:
-            content = "File not found."
-
-        return render(request, 'home.html', {'content': content})
-    
-
 
 
 

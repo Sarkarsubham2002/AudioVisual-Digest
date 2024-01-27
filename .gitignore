@@ -1,2 +1,2 @@
-env/
-musicdata/
+.env
+.musicdata 

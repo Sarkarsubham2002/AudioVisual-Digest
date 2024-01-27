@@ -16,3 +16,34 @@ git hub commands :
 
 ###############################################
 to install whisper and all its repositories:   ---->> Make sure you install whisper using the command pip install git+https://github.com/openai/whisper.git 
+
+
+
+
+###############################################################
+for installing mysql in macos:
+    1.brew install mysql-client
+
+After the installation, Homebrew will provide instructions on how to link the MySQL client library. Follow those instructions, but it's typically something like:
+    2.echo 'export PATH="/usr/local/opt/mysql-client/bin:$PATH"' >> ~/.zshrc  # or ~/.bash_profile if you use Bash
+    
+
+    1.Starting the mysql: -->>>>  brew services start mysql
+    2. also : pip3 install pymysql-->> creates the connection between django app and mysql
+    2. mysql-->>should hrw this error==ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+    3. this command should ask for the password for you mysql root--->>>  mysql -u root -p
+    4. pip3 intall mysqlclient(without this the mysql will not connect with database)
+
+
+
+Now you want to hide the personal password in settings.py which integrating your mysql with your django:
+        1.pip install python-dotenv
+        
+        2.Create a .env file:
+        In your project's root directory, create a file named .env and add the sensitive information there:
+
+        3.Load environment variables in settings.py:
+        In your settings.py file, use python-dotenv to load the environment variables. 
+        Add the following code at the top of your settings.py:
+
+        

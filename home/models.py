@@ -11,7 +11,9 @@ class MediaFile(models.Model):
 
 # Create your models here.
 class details(models.Model):
+    
     person_name = models.CharField(max_length=30)
 
     summary = models.TextField()
+    title = models.CharField(max_length=255, default=' ')
 

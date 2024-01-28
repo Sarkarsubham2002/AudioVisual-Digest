@@ -11,6 +11,8 @@ from . import views
 urlpatterns = [
 
     path('home/', views.HomeView.as_view(), name='home.base'),
+    path('homedata/', views.HomeData.as_view(), name='homedata.base'),
+
 
     
     

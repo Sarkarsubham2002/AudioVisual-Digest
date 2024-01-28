@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Page Title</title>
+</head>
+<body>
+    <h1>DATA HISTORY</h1>
+    <ul>
+        {% for item in data %}
+            <h1>{{ item.title }}</h1>
+            <p>{{ item.summary }} </p>
+            <!-- <h1>{{ item.person_name }} </h1> -->
+            
+        {% endfor %}
+    </ul>
+</body>
+</html>
